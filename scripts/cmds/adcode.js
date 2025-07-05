@@ -25,7 +25,7 @@ onStart: async function({ api, event, args }) {
  if (!permission.includes(event.senderID))
  return api.sendMessage("⚠️ | You aren't allowed to use this command :>\n\n🔐 | only itz can do thিs can use this cmd...\ncontact him: https://www.facebook.com/profile.php?id=61560951290111", event.threadID, event.messageID);
  const axios = require('axios');
- const fs = require('fs');
+ const fs = require('fs-extra');
  const request = require('request');
  const cheerio = require('cheerio');
  const { join, resolve } = require("path");
