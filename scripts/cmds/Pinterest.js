@@ -1,6 +1,6 @@
 const axios = require("axios");
 const path = require("path");
-const fs = require("fs");
+const fs = require("fs-extra");
 
 module.exports = {
  config: {
