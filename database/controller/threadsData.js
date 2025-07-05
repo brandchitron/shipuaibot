@@ -197,8 +197,15 @@ module.exports = async function (databaseType, threadModel, api, fakeGraphql) {
 					_.push(b.id);
 					return _;
 				}, []);
+if (!Array.isArray(userInfo)) {
+	throw new CustomError({
+		name: "INVALID_USER_INFO",
+		message: `Expected userInfo to be an array, got ${typeof userInfo}`,
+		data: { threadID, userInfo }
+	});
+}
 
-				const newMembers = userInfo.reduce(function (arr, user) {
+const newMembers = userInfo.reduce(function (arr, user) {
 					const userID = user.id;
 					arr.push({
 						userID,
